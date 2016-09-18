@@ -29,7 +29,11 @@ import java.util.List;
  * @see java.util.List
  */
 public abstract class SessionController {
+    public List<Motion> getMotions() {
+        return motions;
+    }
 
+    System.out.println()
     /**
      * Internal list to maintain for
      * holding references to {@code Motion} objects.
@@ -37,21 +41,21 @@ public abstract class SessionController {
      * @see java.util.List
      */
     private List<Motion> motions;
-
+@interface
     /**
      * Repository to save or retrieve {@code Delegate} objects.
      *
      * @see model.repository.DelegateRepository
      */
-    private DelegateRepository delegateRepository;
-
+    private DelegateRepository delegateRepository
+            import (Delegate)
     /**
      * Repository to save or retrieve {@code Motion} objects.
      *
      * @see model.repository.SessionRepository
      */
     private SessionRepository sessionRepository;
-
+interface model.model
     /**
      * Interface to update GUI components
      */
@@ -61,7 +65,7 @@ public abstract class SessionController {
      * Controller for motion
      */
     private MotionController motionController;
-
+    {motionController}
     /**
      * Initializes a newly created {@code SessionController} to
      * save or retrieve {@code Motion} objects.
@@ -93,6 +97,10 @@ public abstract class SessionController {
      */
     public abstract void motion(Motion motion);
 
+    public void setDelegateRepository(DelegateRepository delegateRepository) {
+        this.delegateRepository = delegateRepository;
+    }
+
     /**
      * For every ten minutes, the method should be called
      * to save list of {@code Motion} objects by {@code SessionRepository}.
@@ -102,6 +110,15 @@ public abstract class SessionController {
      * @see java.util.List
      */
     protected abstract void saveMotions();
+
+    public void setUpdateObject(MotionUpdate updateObject) {
+        this.updateObject = updateObject;
+    }
+
+    public MotionController getMotionController() {
+       startTimer();
+        return motionController;
+    }
 
     /**
      * During a motion, once a delegate starts to deliver speech,
